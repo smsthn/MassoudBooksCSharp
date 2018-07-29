@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.6.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,6 +61,7 @@
     <Compile Include="ModefyBookPage.xaml.cs">
       <DependentUpon>ModefyBookPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProtoBufSerialization\MassoudBooksSr.cs" />
     <Compile Include="SomeNotesHolder.cs" />
     <Compile Include="SomeNotesHolderConstroller.cs" />
     <Compile Include="TheSerialiingClass.cs" />
@@ -106,6 +110,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
