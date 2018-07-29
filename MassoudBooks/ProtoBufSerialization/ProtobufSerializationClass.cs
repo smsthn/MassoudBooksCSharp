@@ -16,6 +16,7 @@ namespace MassoudBooks.ProtoBufSerialization
             foreach (var book in books.AllBooks)
             {
                 MassoudBookSerialization.Book srBook = new MassoudBookSerialization.Book();
+                srBook.Name = book.Name;
                
                 MassoudBookSerialization.Book.Types.Catagories convertCatagory()
                 {
@@ -82,7 +83,7 @@ namespace MassoudBooks.ProtoBufSerialization
                 srBook.Pages = book.PageNumber;
                 toSerialize.AllBooks.Add(srBook);
             }
-            using (Stream fileToSave = File.OpenWrite(pathToSave)) { 
+            using (Stream fileToSave = File.Open(pathToSave,FileMode.Create)) { 
                  toSerialize.WriteTo(fileToSave);
             }
         }
