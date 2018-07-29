@@ -25,7 +25,7 @@ namespace MassoudBooks
             this.CatagoryCmboBx.ItemsSource = MainWindow.mCatagoies;
             this.CatagoryCmboBx.SelectedIndex = (int)BookToModefy.Catagory;
             this.ReadingStatusCmboBx.ItemsSource = MainWindow.mReadingStatuses;
-            this.ReadingStatusCmboBx.SelectedIndex = (int)BookToModefy.Status;
+            this.ReadingStatusCmboBx.SelectedIndex = (int)BookToModefy.ReadingStatus;
             this.BookTagsCmboBx.ItemsSource = MainWindow.TheBooks.Tags;
             this.PagesTxtBx.Text = BookToModefy.PageNumber.ToString();
             Canvas.SetZIndex(this.BookTagsCmboBx, 2);
@@ -61,7 +61,7 @@ namespace MassoudBooks
             }
             BookToModefy.Name = name;
             BookToModefy.Catagory = catagory;
-            BookToModefy.Status = readingStatus;
+            BookToModefy.ReadingStatus = readingStatus;
             BookToModefy.BookTags = tags;
             this.Close();
         }

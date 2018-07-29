@@ -127,6 +127,7 @@ namespace MassoudBooks
                     book.BookTags = new ObservableCollection<string>(book.BookTags.Distinct());
                 }
                 TheSerialiingClass.serialize<Books>(cnfgcs.Path_SafeSave, TheBooks);
+            ProtoBufSerialization.ProtobufSerializationClass.protoSave(TheBooks, @"D:\MassoudBooks\prsave.dat");
             }
             #endregion
         

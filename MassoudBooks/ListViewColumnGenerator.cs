@@ -49,7 +49,7 @@ namespace MassoudBooks
             
             if (MainWindow.TheBooks.AllBooks.Count == 0)
                 return MainWindow.TheBooks.AllBooks;
-            if ((MainWindow.TheBooks.AllBooks.Where(b => (catagory == Catagory.Any ? true : b.Catagory == catagory) && (readingStatus == ReadingStatus.Any ? true : b.Status == readingStatus) && checkTags(b)).Count() == 0))
+            if ((MainWindow.TheBooks.AllBooks.Where(b => (catagory == Catagory.Any ? true : b.Catagory == catagory) && (readingStatus == ReadingStatus.Any ? true : b.ReadingStatus == readingStatus) && checkTags(b)).Count() == 0))
             {
                 return new ObservableCollection<Book>();
             }
@@ -80,7 +80,7 @@ namespace MassoudBooks
                 return book.Name.ToLower().Contains(nameToSearch.ToLower());
             }
             
-            return new ObservableCollection<Book>(MainWindow.TheBooks.AllBooks.Where(b => (catagory == Catagory.Any?true:b.Catagory == catagory) && checkSearch(b) && (readingStatus == ReadingStatus.Any?true:b.Status == readingStatus) && checkTags(b)).ToList()) ;
+            return new ObservableCollection<Book>(MainWindow.TheBooks.AllBooks.Where(b => (catagory == Catagory.Any?true:b.Catagory == catagory) && checkSearch(b) && (readingStatus == ReadingStatus.Any?true:b.ReadingStatus == readingStatus) && checkTags(b)).ToList()) ;
               
         }
     }

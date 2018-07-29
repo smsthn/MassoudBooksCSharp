@@ -62,6 +62,7 @@
       <DependentUpon>ModefyBookPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProtoBufSerialization\MassoudBooksSr.cs" />
+    <Compile Include="ProtoBufSerialization\ProtobufSerializationClass.cs" />
     <Compile Include="SomeNotesHolder.cs" />
     <Compile Include="SomeNotesHolderConstroller.cs" />
     <Compile Include="TheSerialiingClass.cs" />

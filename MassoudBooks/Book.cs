@@ -10,7 +10,7 @@ namespace MassoudBooks
    public class Book
     {
         public string Uniqe_ID { get; }
-        public ReadingStatus Status { get; set; }
+        public ReadingStatus ReadingStatus { get; set; }
         public string Name { get; set; }
         public int PageNumber { get; set; }
         public Catagory Catagory { get; set; }
@@ -24,7 +24,7 @@ namespace MassoudBooks
         {
             
             Notes = new ObservableCollection<string>();
-            Status = status;
+            ReadingStatus = status;
             Name = name;
             PageNumber = 0;
             this.Catagory = catagory;
