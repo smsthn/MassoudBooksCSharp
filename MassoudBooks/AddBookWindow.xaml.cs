@@ -100,7 +100,9 @@ namespace MassoudBooks
             if (MainWindow.TheBooks.Tags.Contains(newTag))
                 return;
             MainWindow.TheBooks.Tags.Add(newTag);
-            MainWindow.TheBooks.Tags = new ObservableCollection<string>(MainWindow.TheBooks.Tags.OrderBy(i => i));
+             MainWindow.TheBooks.Tags = new ObservableCollection<string>(MainWindow.TheBooks.Tags.OrderBy(i => i));
+            //MainWindow.TheBooks.Tags.OrderBy(i => i);
+            
             this.TagTxtBx.Clear();
             this.TagTxtBx.IsEnabled = false;
         }

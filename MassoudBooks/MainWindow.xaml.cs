@@ -30,6 +30,18 @@ namespace MassoudBooks
         private List<string> mTag = null;
         public MainWindow()
         {
+            if(!File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"\cnfg.xml"))
+            {
+                Cnfgcs c = new Cnfgcs();
+                c.Path_NotesSave = System.AppDomain.CurrentDomain.BaseDirectory + @"\saves\notessave.xml";
+                c.Path_SafeSave = System.AppDomain.CurrentDomain.BaseDirectory + @"\saves\safesave.xml";
+                c.Path_Save = System.AppDomain.CurrentDomain.BaseDirectory + @"\saves\save.xml";
+                TheSerialiingClass.serialize<Cnfgcs>(System.AppDomain.CurrentDomain.BaseDirectory + @"\cnfg.xml",c);
+            }
+            if(!Directory.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"\saves"))
+            {
+                Directory.CreateDirectory(System.AppDomain.CurrentDomain.BaseDirectory + @"\saves");
+            }
             cnfgcs = TheSerialiingClass.deserialize<Cnfgcs>(System.AppDomain.CurrentDomain.BaseDirectory+@"\cnfg.xml");
             TheBooks = TheSerialiingClass.deserialize<Books>(cnfgcs.Path_Save);
             mCatagoies = new ObservableCollection<string>(Enum.GetNames(typeof(Catagory)).ToList<string>());
